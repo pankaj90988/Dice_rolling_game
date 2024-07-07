@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roll Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <section class="main-cont">
+        <h1 id="title">Lets Play <span>Game Rolling Dice</span></h1>
+        <div class="card">
+            <div class="player-container">
+                <div class="player-1">
+                    <h2>Player 1</h2>
+                    <img src="images/rolldice.png" alt="" class="leftImage">
+                    <p class="output output-1">None</p>
+                </div>
+                <div class="player-2">
+                    <h2>Player 2</h2>
+                    <img src="images/rolldice.png" alt="" class="rightImage">
+                    <p class="output output-2">None</p>
+                </div>
+            </div>
+            <div class="middle">
+                <h3 class="text play-text">Play</h3>
+                <p class="text">To Chaliye Shuru Krte hai</p>
+            </div>
+            <div class="btn-box">
+                <button class="btn-1" onclick="player1Handler(event)">Roll Dice-1</button>
+                <button class="btn-2" onclick="player2Handler(event)">Roll Dice-2</button>
+            </div>
+
+            <div class="point-counter">
+                <div class="player-1-point">
+                    <h2>Player-1 Points</h2>
+                    <p class="point-of-p1 points" name="one">0</p>
+                </div>
+                <div class="player-2-point">
+                    <h2>Player-2 Points</h2>
+                    <p class="point-of-p2 points" name="two">0</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>
