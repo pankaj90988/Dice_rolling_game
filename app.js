@@ -32,10 +32,24 @@ function randomFunction1() {
 
 
 function changeTextOne() {
-    console.log("hello");
     pointofne = pointofne + 1;
 
     pointofone.innerHTML = `${pointofne}`;
+
+    setTimeout(() => {
+        if (pointofne == 10) {
+            alert("Player 1 Won the match");
+            pointofne = 0;
+            pointofwo = 0;
+            pointofone.innerHTML = 0;
+            pointoftwo.innerHTML = 0;
+            outputOne.innerHTML = "none";
+            outputTwo.innerHTML = "none";
+            player1Image.src = "images/rolldice.png";
+            player2Image.src = "images/rolldice.png";
+        }
+    }, 300)
+
     console.log(pointofne);
 
 }
@@ -44,16 +58,28 @@ function changeTextTwo() {
     console.log("hello");
     pointofwo = pointofwo + 1;
     pointoftwo.innerHTML = `${pointofwo}`;
-    console.log(pointofwo);
+
+    setTimeout(() => {
+        if (pointofwo == 10) {
+            alert("Player 2 Won the match");
+            pointofne = 0;
+            pointofwo = 0;
+            pointofone.innerHTML = 0;
+            pointoftwo.innerHTML = 0;
+            outputOne.innerHTML = "none";
+            outputTwo.innerHTML = "none";
+            player1Image.src = "images/rolldice.png";
+            player2Image.src = "images/rolldice.png";
+        }
+    }, 300);
+
 }
 
 setTimeout(function () {
     if (pointofne == 5) {
-        console.log("pankaj");
         alert("Player 1 won");
 
     } else if (pointofwo == 5) {
-        console.log("kumar");
         alert("Player 2 won");
 
     }
@@ -90,6 +116,8 @@ function player1Handler(e) {
 }
 // console.log(player1Generate)
 
+
+//Player 2 Rolling funtion
 function player2Handler(e) {
     player2Image.src = "images/rolldice.png";
     // console.log(player1Image.src)
@@ -114,14 +142,12 @@ function player2Handler(e) {
         if (numberOne == numberTwo) {
             output.innerHTML = "Match Draw";
             console.log(numberOne);
-
-
         } else if (numberOne > numberTwo) {
-            output.innerHTML = "Player 1 Won";
+            output.innerHTML = "Player 1✅ Won";
             playtext.style.color = "orangered";
             changeTextOne();
         } else if (numberOne < numberTwo) {
-            output.innerHTML = "Player 2 Won";
+            output.innerHTML = "Player 2✅ Won";
             playtext.style.color = "green";
             changeTextTwo();
         }
